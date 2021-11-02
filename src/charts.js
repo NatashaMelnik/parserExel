@@ -7,6 +7,8 @@ import ReactExport from "react-export-excel";
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+
 
 const ExcelFile = ReactExport.ExcelFile;
 const ExcelSheet = ReactExport.ExcelFile.ExcelSheet;
@@ -96,6 +98,9 @@ export const Charts = ({ props }) => {
                         }
                     }}
                 />
+                <Typography variant="h4" display="block" gutterBottom>
+                    Array: [{dataDefRnd.join(', ')}]
+                </Typography>
             </div>
             <div>
                 <Bar
@@ -112,6 +117,9 @@ export const Charts = ({ props }) => {
                         }
                     }}
                 />
+                <Typography variant="h4" display="block" gutterBottom>
+                    Array: [{dataSqRnd.join(', ')}]
+                </Typography>
             </div>
             <div>
                 <Bar
@@ -128,8 +136,11 @@ export const Charts = ({ props }) => {
                         }
                     }}
                 />
+                 <Typography variant="h4" display="block" gutterBottom>
+                    Array: [{congruentRandom.join(', ')}]
+                </Typography>
             </div>
-            <div onClick={exportToCSV([defaultRandomChart, squareRandomChart, conChart], 'test_charts')}>
+            <div onClick={exportToCSV([dataDefRnd, dataSqRnd, dataConRnd], 'test_charts')}>
                 <Button variant="outlined" color="primary">
                     export to exel
                 </Button>
